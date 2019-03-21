@@ -1,0 +1,239 @@
+@font-face
+{
+	font-family: 'lamborgini';
+	src: url('/fonts/lamborgini-personnal.ttf');
+}
+
+.chapitre{
+    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px black;
+}
+
+.size{
+    width: 50%;
+    padding-top: 88px;
+}
+
+.image{
+    width: 200px;
+    height: 150px;
+}
+
+.title{
+    font-family: 'lamborgini';
+}
+
+.title:not(:last-child){
+    margin-bottom: 0;
+}
+
+.title.is-2{
+    margin-bottom: 20px;
+}
+
+.title.is-3{
+    margin-bottom: 20px;
+}
+
+body{
+    height: 100vh;
+    background-color: lightgray ;
+}
+
+#alaska{
+    height: 100%;
+    background-size: cover;
+}
+
+#intro{
+    display: flex;
+    position: relative;
+    background-image: url("../img/alaska.jpg");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+#content{
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
+.bienvenue{
+    width: 100%;
+    min-width: 100%;
+    position: absolute;
+    margin-bottom: 75px;
+}
+
+.test{
+    align-items: center;
+}
+
+.color-principal{
+    background-color: cadetblue;
+    
+}
+
+.color-button{
+    background-color: antiquewhite;
+    border: 1px solid black;
+}
+
+#roman{
+    color: antiquewhite;
+    text-shadow: 1px 1px 2px black;
+    margin-bottom: 10px;
+}
+
+.media-left{
+    margin-right: 2rem;
+}
+
+
+#commentValid{
+    display: none;
+}
+
+#submitcomment{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#submit{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#logo{
+    text-decoration: none;
+    color: black;
+}
+
+
+.tox-notifications-container{
+    display: none;
+}
+
+.size_chapter{
+    width: 45%;
+}
+
+p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#comments{
+    margin-top: 25px ;
+}
+
+.chapter{
+    text-decoration: none;
+    color: black;
+}
+
+
+/*PORTABLE*/
+@media all and (max-width: 767px)
+{
+    body{
+        font-size: 0.80rem;
+    }
+
+    .size{
+        width: 90%;
+    }
+
+    .title.is-1{
+        font-size: 2rem;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .navbar-burger{
+        height: auto;
+    }
+
+    .button.is-fullwidth{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .box{
+        width: 100%;
+    }
+
+    .field.is-grouped{
+        width: 100%;
+    }
+
+    .title.is-3{
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+
+    .title.is-2{
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+    .title.is-4{
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .tag:not(body){
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1080px){
+
+    .size{
+        width: 70%;
+    }
+
+    .title.is-1{
+        font-size: 2rem;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .navbar-burger{
+        height: auto;
+    }
+
+    .button.is-fullwidth{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .box{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .field.is-grouped{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .title.is-3{
+        margin-bottom: 15px;
+    }
+
+    .title.is-2{
+        margin-bottom: 20px;
+    }
+    
+
+}
