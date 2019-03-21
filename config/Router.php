@@ -44,9 +44,6 @@ class Router{
                 elseif($_GET['route'] === 'single')
                 {
                     $this->frontController->reportComment($_POST);
-                }
-                elseif($_GET['route'] === 'addComment')
-                {
                     $this->frontController->addComment($_POST);
                 }
                 elseif($_SESSION)
@@ -64,6 +61,9 @@ class Router{
                         elseif($_GET['route'] === 'signalement')
                         {
                             $this->backController->reportedComment($_POST);
+                        }
+                        elseif($_GET['route'] === 'deleteComment')
+                        {
                             $this->backController->deleteComment($_POST);
                         }
                         elseif($_GET['route'] === 'cancelReportComment')
