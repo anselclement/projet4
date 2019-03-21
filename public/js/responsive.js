@@ -9,16 +9,17 @@
 })();
 
 
-(function(){
+(function verif(){
 
     var formulaire = document.getElementById("submitcomment");
     var champ = document.getElementById('contentcomment');
     var comment = document.getElementById('commentValid');
 
-    formulaire.addEventListener('click', function(){
+    formulaire.addEventListener('click', function(e){
 
-        console.log('test');
+        if(champ.value == ""){
             comment.style.display = "flex";
-
+            e.preventDefault();
+        }
     });
 })();
