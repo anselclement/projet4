@@ -17,12 +17,13 @@ $this->title = "Article";
         <h3 class="title is-3">Commentaires</h3>
 
         <?php
-        foreach($comments as $comment){
+        foreach($comments as $comment){ 
         ?>
-            <div class="box">
-                <h4 class="title is-4"><?= htmlspecialchars($comment->getPseudo());?> :</h4>
+            <div class="box" >
+                <h4 class="title is-4" id="<?= (int)$comment->getId() ?>"><?= htmlspecialchars($comment->getPseudo());?> :</h4>
                 <p><?= htmlspecialchars($comment->getContent());?></p>
                 <p><strong>Posté le : </strong><?= htmlspecialchars($comment->getDateAdded());?></p>
+                
 
                 <?php
                 if((int)$comment->getReported() === 1){?>
@@ -31,7 +32,7 @@ $this->title = "Article";
                 }
                 elseif(isset($_SESSION['id']) && isset($_SESSION['pseudo'])){
                     ?>
-                    <form method="post" action="../public/index.php?route=single">
+                    <form method="post" action="../public/index.php?route=single#<?= (int)$comment->getId() ?>">
                         <input type="hidden" id="article_id" name="idArt" value="<?= (int)$_GET['idArt'] ?>" >
                         <input type="hidden" id="idComment" name="idComment" value="<?= (int)$comment->getId() ?>">
                         <input type="submit" value="Signaler" id="submit" name="submit" class="button color-button">
@@ -51,11 +52,7 @@ $this->title = "Article";
         <form method="post" action="../public/index.php?route=single#submitcomment" >
             <input type="hidden" id="pseudo" name="pseudo" value="<?= $_SESSION['pseudo'] ?>">
             <label class="label">Ajouter un Commentaire</label><br>
-            <textarea class="textarea" rows="10" id="contentcomment" name="content"><?php
-                if(isset($post['content'])){
-                    echo $post['content'];
-                }?></textarea>
-        
+            <textarea class="textarea" rows="5" id="contentcomment" name="content"></textarea>
             <input type="hidden" id="article_id" name="idArt" value="<?= (int)$_GET['idArt'] ?>" >
             <input type="submit" value="Envoyer" id="submitcomment" name="submit" class="button color-button">
         </form>
