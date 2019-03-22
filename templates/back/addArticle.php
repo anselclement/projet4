@@ -21,8 +21,8 @@
 
             <div class="field">
                 <label class="label">Contenu</label>
-                <div class="control arrondi">
-                    <textarea class="textarea" rows="15" id="content" name="content"><?php
+                <div class="control">
+                    <textarea class="textarea" rows="15" id="contentArticle" name="content"><?php
                         if((isset($post['content']))){
                             echo ($post['content']);
                         }?>
