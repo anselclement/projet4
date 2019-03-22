@@ -1,5 +1,4 @@
 <div class="container size">
-
     <div class="box">
         <?php if(isset($error) && $error === 1){?>
                     <p class="tag is-danger ">Ajouter un titre ET du contenu avant de valider !</p>
@@ -35,14 +34,10 @@
             }else{?>
                 <input type="submit" value="Envoyer" class="button color-button" id="submit" name="submit">
             <?php
-            }?>
-
-                
+            }?>      
         </form>
             <a href="../public/index.php"><input type="submit" value="Acceuil" id="submit" name="submit" class="button color-button"></a>
-            
     </div>
-
 </div>
 
 
