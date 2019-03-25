@@ -23,7 +23,11 @@ class Router{
     public function run(){
 
         try{
-            if(isset($_GET['route']))
+            if(!isset($_GET['route']))
+            {
+                $this->frontController->home();
+            }
+            elseif(isset($_GET['route']))
             {
                 if($_GET['route'] === 'article')
                 {
@@ -48,7 +52,7 @@ class Router{
                 }
                 elseif($_SESSION)
                 {
-                    if( $_SESSION['role'] === 'administrateur'){
+                    if($_SESSION['role'] === 'administrateur'){
 
                         if($_GET['route'] === 'dashboard')
                         {
@@ -75,29 +79,26 @@ class Router{
                             $this->backController->deleteArticle($_POST);
                         }
                         else{
-                            $this->errorController->error();
+                            $this->errorController->error(404);
                         }
                     }
-                    else{
-                        $this->errorController->error();
+                    elseif($_SESSION['role'] != 'administrateur')
+                    {
+                        $this->errorController->error(403); 
                     }
                 }
                 else{
-                    $this->errorController->error();
+                    $this->errorController->error(404); 
                 }
-            }
-            else{
-                $this->frontController->home();
             }
         }
         catch(Exception $e){
             
-            $this->errorController->error();
-        }
+            $this->errorController->error(500);
+        } 
     }
 }
 
-?>
 
 
 

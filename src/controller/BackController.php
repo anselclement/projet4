@@ -6,13 +6,11 @@ use App\src\DAO\ArticleDAO;
 use App\src\model\View;
 use App\src\DAO\CommentDAO;
 
-
 class BackController{
 
     private $view;
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->view = new View();
         $this->commentDAO = new CommentDAO();
         $this->articleDAO = new ArticleDAO();
@@ -26,8 +24,7 @@ class BackController{
     public function reportedComment(){
 
         $comment = $this->commentDAO->getCommentReported();
-
-        $this->view->render('back/signalement', [
+        return $this->view->render('back/signalement', [
             'comments' => $comment
         ]);
     }
@@ -46,12 +43,12 @@ class BackController{
             $this->commentDAO->cancelReportedComment($post['idComment']);
             header('Location: ../public/index.php?route=signalement');
         }
-        
     }
 
     public function addArticle($post){
         
         $error = 0 ;
+        
         if(isset($post['idArt']) && isset($post['submit'])){
             if($post['content'] === "" || $post['title'] === ""){
                 $error = 1;
@@ -69,12 +66,11 @@ class BackController{
             header('Location: ../public/index.php#decouvrir');
             } 
         }
+        
         $this->view->render('back/addArticle', [
             'post' => $post,
             'error' => $error
         ]);
-        
-
     }
 
     public function deleteArticle($post){

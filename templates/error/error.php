@@ -12,10 +12,9 @@
 
 <body>
 
-    <div>
-        <h1>Mon blog</h1>
-        <p>Erreur</p>
-
+    <div id="error">
+        <h2 class="title is-2"><?= $title ?><h2>
+        <p><?= $message ?><p>
     </div>
 
 </body>

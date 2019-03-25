@@ -103,6 +103,7 @@ class FrontController{
         $error = 0;
 
         if(isset($post['submit'])){
+            
             if(isset($post['pseudo']) && isset($post['password'])){
 
                 $user = $this->userDAO->getUser($post['pseudo']);
@@ -127,7 +128,6 @@ class FrontController{
                         header('Location: ../public/index.php?route=dashboard');
                     }
                 }
-
             }
         }
         $this->view->render('front/login', [
@@ -145,9 +145,7 @@ class FrontController{
 
     public function reportComment($post){
 
-        $comment = $this->commentDAO->reportComment($post['idComment']);
+        $this->commentDAO->reportComment($post['idComment']);
         header('Location: ../public/index.php?route=article&idArt=' .$post['idArt']);
     }
-
-    
 }

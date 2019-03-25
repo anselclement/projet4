@@ -4,13 +4,25 @@
 	src: url('/fonts/lamborgini-personnal.ttf');
 }
 
-.chapitre{
-    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px black;
+body{
+    height: 100vh;
+    background-color: lightgray ;
+}
+
+p{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 h4:target {
     padding-top: 7em; 
     margin-top: -7em; 
+}
+
+/* CLASS */
+
+.chapitre{
+    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px black;
 }
 
 .size{
@@ -39,9 +51,77 @@ h4:target {
     margin-bottom: 20px;
 }
 
-body{
-    height: 100vh;
-    background-color: lightgray ;
+.bienvenue{
+    width: 100%;
+    min-width: 100%;
+    position: absolute;
+    margin-bottom: 75px;
+}
+
+.test{
+    align-items: center;
+}
+
+.color-principal{
+    background-color: cadetblue;
+    
+}
+
+.color-button{
+    background-color: antiquewhite;
+    border: 1px solid black;
+}
+
+.media-left{
+    margin-right: 2rem;
+}
+
+.tox-notifications-container{
+    display: none;
+}
+
+.size_chapter{
+    width: 45%;
+}
+
+.chapter{
+    text-decoration: none;
+    color: black;
+}
+
+/* ID */
+
+#error{
+    margin-top: 50px;
+}
+
+#comments{
+    margin-top: 25px ;
+}
+
+#commentValid{
+    display: none;
+}
+
+#submitcomment{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#submit{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#logo{
+    text-decoration: none;
+    color: black;
+}
+
+#roman{
+    color: antiquewhite;
+    text-shadow: 1px 1px 2px black;
+    margin-bottom: 10px;
 }
 
 #alaska{
@@ -66,82 +146,6 @@ body{
     padding: 0;
     background-color: lightgray;
 }
-
-.bienvenue{
-    width: 100%;
-    min-width: 100%;
-    position: absolute;
-    margin-bottom: 75px;
-}
-
-.test{
-    align-items: center;
-}
-
-.color-principal{
-    background-color: cadetblue;
-    
-}
-
-.color-button{
-    background-color: antiquewhite;
-    border: 1px solid black;
-}
-
-#roman{
-    color: antiquewhite;
-    text-shadow: 1px 1px 2px black;
-    margin-bottom: 10px;
-}
-
-.media-left{
-    margin-right: 2rem;
-}
-
-
-#commentValid{
-    display: none;
-}
-
-#submitcomment{
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
-#submit{
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
-#logo{
-    text-decoration: none;
-    color: black;
-}
-
-
-.tox-notifications-container{
-    display: none;
-}
-
-.size_chapter{
-    width: 45%;
-}
-
-p{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-
-#comments{
-    margin-top: 25px ;
-}
-
-.chapter{
-    text-decoration: none;
-    color: black;
-}
-
 
 /*PORTABLE*/
 @media all and (max-width: 767px)
@@ -239,6 +243,5 @@ p{
     .title.is-2{
         margin-bottom: 20px;
     }
-    
 
 }

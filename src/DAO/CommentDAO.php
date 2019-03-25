@@ -7,6 +7,7 @@ use App\src\model\Comment;
 class CommentDAO extends DAO{
 
     public function getCommentsFromArticle($idArt){
+
         $sql = 'SELECT id, pseudo, content, date_added, reported FROM comment WHERE article_id = ?';
         $result = $this->sql($sql, [$idArt]);
         $comments = [];
@@ -18,17 +19,20 @@ class CommentDAO extends DAO{
     }
 
     public function addComment($comment){
+
         extract($comment);
         $sql = 'INSERT INTO comment (pseudo, content, date_added, article_id, reported) VALUES (?, ?, NOW(), ?, 0)'; 
         $this->sql($sql, [$pseudo, htmlspecialchars_decode($content), (int)$idArt]);
     }
 
     public function reportComment($idComment){
+
         $sql = 'UPDATE comment SET reported = 1 WHERE id = ?';
-        $result = $this->sql($sql, [$idComment]);
+        $this->sql($sql, [$idComment]);
     }
 
     public function getCommentReported(){
+
         $sql = 'SELECT id, pseudo, content, date_added, reported FROM comment WHERE reported = 1 ';
         $result = $this->sql($sql);
         $comments = [];
@@ -40,13 +44,15 @@ class CommentDAO extends DAO{
     }
 
     public function cancelReportedComment($idComment){
+
         $sql = 'UPDATE comment SET reported = 0 WHERE id = ? ';
-        $result = $this->sql($sql, [$idComment]);
+        $this->sql($sql, [$idComment]);
     }
 
     public function deleteComment($idComment){
+        
         $sql = 'DELETE FROM comment WHERE id = ?';
-        $result = $this->sql($sql, [$idComment]);
+        $this->sql($sql, [$idComment]);
     }
 
     private function buildObject(array $row){

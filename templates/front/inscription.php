@@ -3,12 +3,12 @@ $this->title = "Inscription";
 ?>
 
 <div  class="size container ">
-
     <div class="box ">
 
         <form method="post" action="../public/index.php?route=inscription">
 
             <?php if(isset($error) && $error['pseudo'] === 0){?>
+
                 <div class="field">
                     <label class="label ">Pseudo</label>
                     <div class="control has-text-centered has-icons-left">
@@ -22,8 +22,10 @@ $this->title = "Inscription";
                         </span>
                     </div>
                 </div>
+
             <?php
             }else{?>
+
                 <div class="field">
                     <label class="label ">Pseudo</label>
                     <div class="control has-text-centered has-icons-left has-icons-right">
@@ -47,11 +49,13 @@ $this->title = "Inscription";
                     <?php
                     }?>
                 </div>
+
             <?php
             }?>
             
 
             <?php if(isset($error) && $error['mail'] === 0){?>
+
                 <div class="field">
                     <label class="label">Mail</label>
                     <div class="control has-text-centered has-icons-left">
@@ -65,8 +69,10 @@ $this->title = "Inscription";
                         </span>
                     </div>
                 </div>
+
             <?php
             }else{?>
+
                 <div class="field">
                     <label class="label">Mail</label>
                     <div class="control has-text-centered has-icons-left has-icons-right">
@@ -84,10 +90,12 @@ $this->title = "Inscription";
                     </div>
                     <p class="help is-danger">Format du mail incorrect !</p>
                 </div>
+
             <?php
             }?>
             
             <?php if(isset($error) && $error['password'] === 0){?>
+
                 <div class="field">
                     <label class="label">Mot de passe</label>
                     <div class="control has-text-centered has-icons-left ">
@@ -101,8 +109,10 @@ $this->title = "Inscription";
                         </span>
                     </div>
                 </div>
+
             <?php
             }else{?>
+
                 <div class="field">
                     <label class="label">Mot de passe</label>
                     <div class="control has-text-centered has-icons-left has-icons-right">
@@ -120,6 +130,7 @@ $this->title = "Inscription";
                     </div>
                     <p class="help is-danger">Mot de passe invalide ! Doit commencer par une majuscule et contenir au moins un chiffre et un caractère spécial !</p>
                 </div>
+                
             <?php
             }?>
             

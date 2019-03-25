@@ -27,5 +27,4 @@
 
 <script src="../public/js/responsive.js"></script>
 </body>
-
 </html>

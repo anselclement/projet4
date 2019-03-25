@@ -7,6 +7,7 @@ use App\src\model\Article;
 class ArticleDAO extends DAO{
 
     public function getArticles(){
+
         $sql = 'SELECT id, title, content, author, date_added FROM article ORDER BY id DESC';
         $result = $this->sql($sql);
         $articles = [];
@@ -18,6 +19,7 @@ class ArticleDAO extends DAO{
     }
 
     public function getArticle($idArt){
+        
         $sql = 'SELECT id, title, content, author, date_added FROM article WHERE id = ?';
         $result = $this->sql($sql, [$idArt]);
         $row = $result->fetch();
@@ -30,10 +32,10 @@ class ArticleDAO extends DAO{
     }
 
     public function deleteArticle($idArt){
+
         $sql = 'DELETE FROM article WHERE id = ?';
-        $result = $this->sql($sql, [$idArt]);
+        $this->sql($sql, [$idArt]);
     }
-    
 
     public function addArticle($article){
 
@@ -43,12 +45,10 @@ class ArticleDAO extends DAO{
     }
 
     public function editArticle($article){
+        
         extract($article);
-        var_dump($title);
-        var_dump($content);
-        var_dump($idArt);
         $sql = 'UPDATE article SET title = ?, content = ? WHERE id = ?';
-        $result = $this->sql($sql, [$title, $content, (int)$idArt]);
+        $this->sql($sql, [$title, $content, (int)$idArt]);
     }
 
     private function buildObject(array $row){

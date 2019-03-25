@@ -1,13 +1,12 @@
 <?php
 
 namespace App\src\DAO;
-use PDO;
 
+use PDO;
 
 abstract class DAO{
 
     private $connection;
-
 
     private function checkConnection(){
 
@@ -48,4 +47,3 @@ abstract class DAO{
         }
     }
 }
-?>

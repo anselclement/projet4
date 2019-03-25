@@ -8,7 +8,6 @@
     });
 })();
 
-
 (function verif(){
 
     var formulaire = document.getElementById("submitcomment");
@@ -17,7 +16,7 @@
 
     formulaire.addEventListener('click', function(e){
 
-        if(champ.value == ""){
+        if(champ.value === ""){
             comment.style.display = "flex";
             e.preventDefault();
         }
