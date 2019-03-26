@@ -4,7 +4,7 @@ $this->title = "Accueil";
 
 <section id="intro">
     <div class="container has-text-centered bienvenue">
-        <h2 id="roman" class="title is-1">Un billet pour l'Alaska</h2>
+        <h2 id="roman" class="title is-1">Billet simple pour l'Alaska</h2>
         <a href="#decouvrir"><input type="button"  value="Découvrir" class="button is-medium color-button is-rounded"></a>
     </div>
 </section>

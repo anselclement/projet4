@@ -114,7 +114,6 @@ class FrontController{
                 }
                 else{
                     $password = password_verify($post['password'], $user->getPassword());
-                    var_dump($password);
                     if($post['pseudo'] === $user->getPseudo() && $password && $user->getRole() === 'abonné'){
                         $_SESSION['id'] = $user->getId();
                         $_SESSION['pseudo'] = $user->getPseudo();
