@@ -7,10 +7,8 @@
     <title><?= $title ?></title>
     <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
     <script>tinymce.init({ mode: "exact",
-                           elements : "contentArticle",
-                           entity_encoding : 'raw',
-                           forced_root_block : false,
-                           force_p_newlines : false });</script>
+                           elements : "contentArticle"
+                           });</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/css/styles.css">

@@ -46,7 +46,7 @@ class BackController{
     }
 
     public function addArticle($post){
-        
+ 
         $error = 0 ;
         
         if(isset($post['idArt']) && isset($post['submit'])){
@@ -54,7 +54,7 @@ class BackController{
                 $error = 1;
             }else{
             $this->articleDAO->editArticle($post);
-            header('Location: ../public/index.php');
+            header('Location: ../public/index.php#decouvrir');
             }
         }
         elseif(isset($post['submit']) && !isset($post['idArt'])) {
@@ -66,7 +66,6 @@ class BackController{
             header('Location: ../public/index.php#decouvrir');
             } 
         }
-        
         $this->view->render('back/addArticle', [
             'post' => $post,
             'error' => $error
