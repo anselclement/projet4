@@ -50,7 +50,7 @@ class Router{
                     $this->frontController->reportComment($_POST);
                     $this->frontController->addComment($_POST);
                 }
-                elseif($_SESSION)
+                elseif(isset($_SESSION['role']))
                 {
                     if($_SESSION['role'] === 'administrateur'){
 
@@ -84,11 +84,64 @@ class Router{
                     }
                     elseif($_SESSION['role'] != 'administrateur')
                     {
-                        $this->errorController->error(403); 
+                        if($_GET['route'] === 'dashboard')
+                        {
+                            $this->errorController->error(403);                   
+                        }
+                        elseif($_GET['route'] === 'addArticle')
+                        {
+                            $this->errorController->error(403);
+                        }
+                        elseif($_GET['route'] === 'signalement')
+                        {
+                            $this->errorController->error(403);
+                        }
+                        elseif($_GET['route'] === 'deleteComment')
+                        {
+                            $this->errorController->error(403);
+                        }
+                        elseif($_GET['route'] === 'cancelReportComment')
+                        {
+                            $this->errorController->error(403);
+                        }
+                        elseif($_GET['route']  === 'deleteArticle')
+                        {
+                            $this->errorController->error(403);
+                        }
+                        else{
+                            $this->errorController->error(404);
+                        }
                     }
                 }
-                else{
-                    $this->errorController->error(404); 
+                elseif(!isset($_SESSION['role']))
+                {
+                    if($_GET['route'] === 'dashboard')
+                    {
+                        $this->errorController->error(403);                   
+                    }
+                    elseif($_GET['route'] === 'addArticle')
+                    {
+                        $this->errorController->error(403);
+                    }
+                    elseif($_GET['route'] === 'signalement')
+                    {
+                        $this->errorController->error(403);
+                    }
+                    elseif($_GET['route'] === 'deleteComment')
+                    {
+                        $this->errorController->error(403);
+                    }
+                    elseif($_GET['route'] === 'cancelReportComment')
+                    {
+                        $this->errorController->error(403);
+                    }
+                    elseif($_GET['route']  === 'deleteArticle')
+                    {
+                        $this->errorController->error(403);
+                    }
+                    else{
+                        $this->errorController->error(404);
+                    }
                 }
             }
         }
@@ -98,6 +151,7 @@ class Router{
         } 
     }
 }
+
 
 
 
