@@ -76,14 +76,7 @@ class FrontController{
                         $error['pseudo'] = 1;
                     }
                 }elseif($user->getPseudo() != NULL){
-                    if($post['pseudo'] === $user->getPseudo()){
                         $error['pseudo'] = 2;
-                    }
-                }
-            }
-            if(isset($post['pseudo']) && $user != NULL ){
-                if($post['pseudo'] === $user){
-                    $error['pseudo'] = 2;
                 }
             }
             if($error['password'] === 0 && $error['mail'] === 0 && $error['pseudo'] === 0){
@@ -113,8 +106,14 @@ class FrontController{
                     $error = 1;
                 }
                 else{
+
                     $password = password_verify($post['password'], $user->getPassword());
-                    if($post['pseudo'] === $user->getPseudo() && $password && $user->getRole() === 'abonné'){
+                    
+                    if($password != $user->getPassword()){
+
+                        $error = 1;
+                    }
+                    elseif($post['pseudo'] === $user->getPseudo() && $password && $user->getRole() === 'abonné'){
                         $_SESSION['id'] = $user->getId();
                         $_SESSION['pseudo'] = $user->getPseudo();
                         $_SESSION['role'] = $user->getRole();
