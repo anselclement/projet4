@@ -48,7 +48,7 @@ class ArticleDAO extends DAO{
         
         extract($article);
         $sql = 'UPDATE article SET title = ?, content = ? WHERE id = ?';
-        $this->sql($sql, [$title, htmlentities($content), (int)$idArt]);
+        $this->sql($sql, [$title, $content, (int)$idArt]);
     }
 
     private function buildObject(array $row){
