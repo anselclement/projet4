@@ -28,7 +28,7 @@ $this->title = "Accueil";
                     <div class="media-content">
                         <div class="content">
                             <h2><?= htmlspecialchars($article->getTitle());?></h2>
-                            <p><?= htmlspecialchars($article->getContent());?></p>
+                            <p><?= $article->getContent();?></p>
                             <p><?= htmlspecialchars($article->getAuthor());?></p>
                             <p><strong>Date d'ajout :</strong> <?= htmlspecialchars($article->getDateAdded());?></p>
                         </div>

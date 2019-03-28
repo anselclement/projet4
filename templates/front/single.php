@@ -5,7 +5,7 @@ $this->title = "Article";
     <div class="box">
         <h2 class="title is-2"><?= htmlspecialchars($articles->getTitle()); ?></h2>
         <div  class="box">
-            <p class="is-medium"><?= htmlspecialchars($articles->getContent()); ?></p>
+            <p class="is-medium"><?= $articles->getContent(); ?></p>
         </div>
         <p><strong>Ecrit par : </strong><?= htmlspecialchars($articles->getAuthor()); ?></p>
         <p><strong>Crée le : </strong><?= htmlspecialchars($articles->getDateAdded()); ?></p>
